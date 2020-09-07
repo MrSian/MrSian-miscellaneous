@@ -1,16 +1,16 @@
 ## \%\~dp0\[获取当前路径\]
 
-\%\~dp0 “d”为Drive的缩写，即为驱动器，磁盘、“p”为Path缩写，即为路径，目录
+\%\~dp0 “d”为 Drive 的缩写，即为驱动器，磁盘、“p”为 Path 缩写，即为路径，目录
 
 cd \%\~dp0 ：进入批处理所在目录
 
-cd \%\~dp0bin\\ ：进入批处理所在目录的bin目录
+cd \%\~dp0bin\\ ：进入批处理所在目录的 bin 目录
 
 ### 示例
 
-这个示例在win10 x64测试正常
+这个示例在 win10 x64 测试正常
 
-::作用：以管理员身份安装Apache
+::作用：以管理员身份安装 Apache
 d:
 cd \%\~dp0bin\\
 httpd.exe -k install -n "Apache24"
@@ -35,9 +35,9 @@ taskkill /\?打开帮助
 
 [![image](https://images0.cnblogs.com/blog/363476/201507/041124459273609.png)](http://images0.cnblogs.com/blog/363476/201507/041124455584424.png)
 
-### cmd窗口中文乱码
+### cmd 窗口中文乱码
 
-在CMD窗口右键/默认值，打开属性选择 “默认代码页为简体中文GBK”，
+在 CMD 窗口右键/默认值，打开属性选择 “默认代码页为简体中文 GBK”，
 
 [![image](https://images0.cnblogs.com/blog/363476/201507/041124490143835.png)](http://images0.cnblogs.com/blog/363476/201507/041124478816279.png)
 
@@ -81,13 +81,13 @@ copy /\?
 
 ## 一、基础语法
 
-1.批处理文件是一个“.bat”结尾的文本文件，这个文件的每一行都是一条DOS命令。可以使用任何文本文件编辑工具创建和修改。
+1.批处理文件是一个“.bat”结尾的文本文件，这个文件的每一行都是一条 DOS 命令。可以使用任何文本文件编辑工具创建和修改。
 
 2.批处理是一种简单的程序，可以用 if 和 goto 来控制流程，也可以使用 for 循环。
 
-3.批处理的编程能力远不如C语言等编程语言，也十分不规范。
+3.批处理的编程能力远不如 C 语言等编程语言，也十分不规范。
 
-4.每个编写好的批处理文件都相当于一个DOS的外部命令，把它所在的目录放到DOS搜索路径\(path\)中，即可在任意位置运行。
+4.每个编写好的批处理文件都相当于一个 DOS 的外部命令，把它所在的目录放到 DOS 搜索路径\(path\)中，即可在任意位置运行。
 
 5.C:\\AUTOEXEC.BAT 是每次系统启动时都会自动运行的，可以将每次启动时都要运行的命令放入该文件中。
 
@@ -95,7 +95,7 @@ copy /\?
 
 7.批处理的文件扩展名为 .bat 或 .cmd。
 
-8.在命令提示下键入批处理文件的名称，或者双击该批处理文件，系统就会调用Cmd.exe来运行该文件。
+8.在命令提示下键入批处理文件的名称，或者双击该批处理文件，系统就会调用 Cmd.exe 来运行该文件。
 
 ## 二、参数
 
@@ -113,7 +113,7 @@ copy /\?
 
 \%APPDATA\% === C:\\Documents and Settings\\Administrator\\Application Data
 
-\%OS\% === Windows\_NT \(系统\)
+\%OS\% === Windows_NT \(系统\)
 
 \%Path\% === \%SystemRoot\%\\system32;\%SystemRoot\%;\%SystemRoot\%\\System32\\Wbem \(原本的设置\)
 
@@ -129,9 +129,9 @@ FOR /F "usebackq delims==" \%\%i IN \(\`set\`\) DO \@echo \%\%i \!\%\%i\!
 
 ### 2\) 传递参数给批处理文件
 
-\%\[1-9\]表示参数，参数是指在运行批处理文件时在文件名后加的以空格\(或者Tab\)分隔的字符串。
+\%\[1-9\]表示参数，参数是指在运行批处理文件时在文件名后加的以空格\(或者 Tab\)分隔的字符串。
 
-变量可以从\%0到\%9，\%0表示批处理命令本身，其它参数字符串用 \%1 到 \%9 顺序表示。
+变量可以从\%0 到\%9，\%0 表示批处理命令本身，其它参数字符串用 \%1 到 \%9 顺序表示。
 
 Sample：
 
@@ -157,7 +157,7 @@ echo \%19 \(打印: "hello"9\)
 
 可显示此命令的帮助信息
 
-Sample： type /\? >>tmp.txt \(把 type 命令的帮助信息写入到tmp.txt文件里\)
+Sample： type /\? >>tmp.txt \(把 type 命令的帮助信息写入到 tmp.txt 文件里\)
 
 Sample： help type \(显示跟“type /\?”一样\)
 
@@ -171,7 +171,7 @@ ECHO 显示当前回显设置。
 
 ECHO \[message\] 显示信息。
 
-echo off 表示在此语句后所有运行的命令都不显示命令行本身；默认是on，on时会显示如： C:\\文件夹路径>命令行。
+echo off 表示在此语句后所有运行的命令都不显示命令行本身；默认是 on，on 时会显示如： C:\\文件夹路径>命令行。
 
 在实际应用中我们会把这条命令和重定向符号\( 也称为管道符号，一般用 > >> \^ \)结合来实现输入一些命令到特定格式的文件中。
 
@@ -195,17 +195,17 @@ Sample： \@echo please wait a minite...
 
 Sample： \@format X: /q/u/autoset
 
-\(format 这个命令是不可以使用/y这个参数的，可喜的是微软留了个autoset这个参数给我们，效果和/y是一样的。\)
+\(format 这个命令是不可以使用/y 这个参数的，可喜的是微软留了个 autoset 这个参数给我们，效果和/y 是一样的。\)
 
 ### 3.Goto 命令
 
-语法：goto label \(label是参数，指定所要转向的批处理程序中的行。\)
+语法：goto label \(label 是参数，指定所要转向的批处理程序中的行。\)
 
 指定跳转到标签行，找到标签行后，程序将处理从下一行开始的命令。
 
-label标签的名字可以随便起，但是最好是有意义的，字母前必须加个冒号“:”来表示这个字母是标签。
+label 标签的名字可以随便起，但是最好是有意义的，字母前必须加个冒号“:”来表示这个字母是标签。
 
-goto命令就是根据这个冒号来寻找下一步跳到到那里。经常与 if 配合使用，根据不同的条件来执行不同的命令组。
+goto 命令就是根据这个冒号来寻找下一步跳到到那里。经常与 if 配合使用，根据不同的条件来执行不同的命令组。
 
 例题见“5.Pause 命令”
 
@@ -213,15 +213,15 @@ goto命令就是根据这个冒号来寻找下一步跳到到那里。经常与 
 
 语法：Rem Message...
 
-\(小技巧：用::代替rem\)
+\(小技巧：用::代替 rem\)
 
-注释命令，在C语言中相当与/\*...\*/,它并不会被执行，只是起一个注释的作用，便于别人阅读和自己日后修改。
+注释命令，在 C 语言中相当与/\*...\*/,它并不会被执行，只是起一个注释的作用，便于别人阅读和自己日后修改。
 
 Sample：\@Rem Here is the description.
 
 ### 5.Pause 命令
 
-会暂停批处理的执行并在屏幕上显示Press any key to continue...的提示，等待用户按任意键后继续
+会暂停批处理的执行并在屏幕上显示 Press any key to continue...的提示，等待用户按任意键后继续
 
 Sample：
 
@@ -237,7 +237,7 @@ pause
 
 goto begin
 
-在这个例子中，驱动器 A 中磁盘上的所有文件均复制到d:\\back中。
+在这个例子中，驱动器 A 中磁盘上的所有文件均复制到 d:\\back 中。
 
 显示的信息提示您将另一张磁盘放入驱动器 A 时，pause 命令会使程序挂起，以便您更换磁盘，然后按任意键再次复制。
 
@@ -249,19 +249,19 @@ goto begin
 
 调用另一个批处理程序，并且不终止父批处理程序。
 
-如果不用call而直接调用别的批处理文件，那么执行完那个批处理文件后将无法返回当前文件并执行当前文件的后续命令。
+如果不用 call 而直接调用别的批处理文件，那么执行完那个批处理文件后将无法返回当前文件并执行当前文件的后续命令。
 
 call 命令接受用作调用目标的标签。如果在脚本或批处理文件外使用 Call，它将不会在命令行起作用。
 
-Sample：call="\%cd\%\\test2.bat" haha kkk aaa \(调用指定目录下的 test2.bat，且输入3个参数给他\)
+Sample：call="\%cd\%\\test2.bat" haha kkk aaa \(调用指定目录下的 test2.bat，且输入 3 个参数给他\)
 
-Sample：call test2.bat arg1 arg2 \(调用同目录下的 test2.bat，且输入2个参数给他\)
+Sample：call test2.bat arg1 arg2 \(调用同目录下的 test2.bat，且输入 2 个参数给他\)
 
 注：可以调用自身\(死循环、递归\)
 
 ### 7.start 命令
 
-调用外部程序，所有的 DOS命令 和 命令行程序 都可以由 start命令 来调用。
+调用外部程序，所有的 DOS 命令 和 命令行程序 都可以由 start 命令 来调用。
 
 入侵常用参数：
 
@@ -277,7 +277,7 @@ WAIT 启动应用程序并等候它结束
 
 parameters 这些为传送到命令/程序的参数
 
-Sample：start /MIN test2.bat arg1 arg2 \(调用同目录下的 test2.bat，且输入2个参数给他，且本窗口最小化\)
+Sample：start /MIN test2.bat arg1 arg2 \(调用同目录下的 test2.bat，且输入 2 个参数给他，且本窗口最小化\)
 
 Sample：e:\\"program files"\\极品列车时刻表\\jpskb.exe \(文件路径名有空格时\)
 
@@ -289,7 +289,7 @@ if 表示将判断是否符合规定的条件，从而决定执行不同的命�
 
 语法: if \[not\] "参数" == "字符串" 待执行的命令
 
-参数如果等于\(not表示不等，下同\)指定的字符串，则条件成立，运行命令，否则运行下一句。\(注意是两个等号\)
+参数如果等于\(not 表示不等，下同\)指定的字符串，则条件成立，运行命令，否则运行下一句。\(注意是两个等号\)
 
 Sample: if "\%1" == "a" format a:
 
@@ -323,9 +323,9 @@ IF ERRORLEVEL 1 \(ECHO 文件拷贝失败
 
 pause
 
-很多DOS程序在运行结束后会返回一个数字值用来表示程序运行的结果\(或者状态\)，称为错误码errorlevel或称返回码。
+很多 DOS 程序在运行结束后会返回一个数字值用来表示程序运行的结果\(或者状态\)，称为错误码 errorlevel 或称返回码。
 
-常见的返回码为0、1。通过if errorlevel命令可以判断程序的返回值，根据不同的返回值来决定执行不同的命令。
+常见的返回码为 0、1。通过 if errorlevel 命令可以判断程序的返回值，根据不同的返回值来决定执行不同的命令。
 
 4\) else
 
@@ -361,11 +361,11 @@ choice 使用此命令可以让用户输入一个字符\(用于选择\)，从而
 
 然后配合 if errorlevel 选择运行不同的命令。
 
-注意：choice命令为DOS或者Windows系统提供的外部命令，不同版本的choice命令语法会稍有不同，请用choice /\?查看用法。
+注意：choice 命令为 DOS 或者 Windows 系统提供的外部命令，不同版本的 choice 命令语法会稍有不同，请用 choice /\?查看用法。
 
 choice 使用此命令可以让用户输入一个字符，从而运行不同的命令。
 
-使用时应该加/c:参数，c:后应写提示可输入的字符，之间无空格。它的返回码为1234……
+使用时应该加/c:参数，c:后应写提示可输入的字符，之间无空格。它的返回码为 1234……
 
 Sample: choice /c:dme defrag,mem,end
 
@@ -389,7 +389,7 @@ for 命令是一个比较复杂的命令，主要用于参数在指定的范围�
 
 \%variable 指定一个单一字母可替换的参数。变量名称是区分大小写的，所以 \%i 不同于 \%I
 
-在批处理文件中使用 FOR 命令时，指定变量建议用 \%\%variable而不要用 \%variable。
+在批处理文件中使用 FOR 命令时，指定变量建议用 \%\%variable 而不要用 \%variable。
 
 \(set\) 指定一个或一组文件。可以使用通配符。
 
@@ -405,7 +405,7 @@ a.FOR /D \%variable IN \(set\) DO command \[command-parameters\]
 
 b.FOR /R \[\[drive:\]path\] \%variable IN \(set\) DO command \[command-parameters\]
 
-检查以 \[drive:\]path 为根的目录树，指向每个目录中的FOR 语句。
+检查以 \[drive:\]path 为根的目录树，指向每个目录中的 FOR 语句。
 
 如果在 /R 后没有指定目录，则使用当前目录。如果集仅为一个单点\(.\)字符，则枚举该目录树。
 
@@ -433,17 +433,17 @@ delims=xxx \- 指分隔符集。这个替换了空格和跳格键的默认分隔
 
 tokens=x,y,m-n \- 指每行的哪一个符号被传递到每个迭代的 for 本身。这会导致额外变量名称的分配。
 
-m-n格式为一个范围。通过 nth 符号指定 mth。
+m-n 格式为一个范围。通过 nth 符号指定 mth。
 
 如果符号字符串中的最后一个字符星号，那么额外的变量将在最后一个符号解析之后分配并接受行的保留文本。
 
 usebackq \- 指定新语法已在下类情况中使用:
 
-在作为命令执行一个后引号的字符串并且一个单引号字符为文字字符串命令并允许在 filenameset中使用双引号扩起文件名称。
+在作为命令执行一个后引号的字符串并且一个单引号字符为文字字符串命令并允许在 filenameset 中使用双引号扩起文件名称。
 
 3\) Sample:
 
-1\. 如下命令行会显示当前目录下所有以bat或者txt为扩展名的文件名。
+1\. 如下命令行会显示当前目录下所有以 bat 或者 txt 为扩展名的文件名。
 
 for \%\%c in \(\*.bat \*.txt\) do \(echo \%\%c\)
 
@@ -451,7 +451,7 @@ a. 如下命令行会显示当前目录下所有包含有 e 或者 i 的目录�
 
 for /D \%\%a in \(\*e\* \*i\*\) do echo \%\%a
 
-b. 如下命令行会显示 E盘test目录 下所有以bat或者txt为扩展名的文件名。
+b. 如下命令行会显示 E 盘 test 目录 下所有以 bat 或者 txt 为扩展名的文件名。
 
 for /R E:\\test \%\%b in \(\*.txt \*.bat\) do echo \%\%b
 
@@ -463,11 +463,11 @@ for /L \%\%c in \(1,1,5\) do echo \%\%c
 
 d. 以下两句，显示当前的年月日和时间
 
-For /f "tokens=1-3 delims=-/. " \%\%j In \('Date /T'\) do echo \%\%j年\%\%k月\%\%l日
+For /f "tokens=1-3 delims=-/. " \%\%j In \('Date /T'\) do echo \%\%j 年\%\%k 月\%\%l 日
 
-For /f "tokens=1,2 delims=: " \%\%j In \('TIME /T'\) do echo \%\%j时\%\%k分
+For /f "tokens=1,2 delims=: " \%\%j In \('TIME /T'\) do echo \%\%j 时\%\%k 分
 
-e. 把记事本中的内容每一行前面去掉8个字符
+e. 把记事本中的内容每一行前面去掉 8 个字符
 
 setlocal enabledelayedexpansion
 
@@ -517,27 +517,27 @@ if ... goto break
 
 测试网络联接状况以及信息包发送和接收状况。但是不能够测试端口。
 
-语法：ping IP地址或主机名 \[-t\] \[-a\] \[-n count\] \[-l size\]
+语法：ping IP 地址或主机名 \[-t\] \[-a\] \[-n count\] \[-l size\]
 
 参数含义：
 
 \-t 不停地向目标主机发送数据；
 
-\-a 以IP地址格式来显示目标主机的网络地址；
+\-a 以 IP 地址格式来显示目标主机的网络地址；
 
-\-n count 指定要Ping多少次，具体次数由count来指定；
+\-n count 指定要 Ping 多少次，具体次数由 count 来指定；
 
 \-l size 指定发送到目标主机的数据包的大小。
 
-Sample: ping 192.168.0.1 \-t \(不停的测试192.168.0.1，按ctrl+c停止\)
+Sample: ping 192.168.0.1 \-t \(不停的测试 192.168.0.1，按 ctrl+c 停止\)
 
-Sample: for /L \%\%a in \(0,1,255\) do ping 192.168.0.\%\%a \-n 1 >> tmp.txt \(ping一下所有的局域网电脑\)
+Sample: for /L \%\%a in \(0,1,255\) do ping 192.168.0.\%\%a \-n 1 >> tmp.txt \(ping 一下所有的局域网电脑\)
 
 ### 2\. telnet 命令
 
-测试端口使用 telnet IP地址或主机名 端口，使用tcp协议的
+测试端口使用 telnet IP 地址或主机名 端口，使用 tcp 协议的
 
-Sample: telnet 192.168.0.1 80 \(测试192.168.0.1的80端口\)
+Sample: telnet 192.168.0.1 80 \(测试 192.168.0.1 的 80 端口\)
 
 ### 3.color 命令
 
@@ -557,13 +557,13 @@ b 是指定背景色的十六进制数字； f 指定前景颜色\(即字体颜�
 
 ### 4\. random 命令
 
-产生随机数\(正整数0\~\)
+产生随机数\(正整数 0\~\)
 
 ### 5\. exit 命令
 
 结束程序。即时是被调用的程序，结束后也不会返回原程序
 
-### 6\. shutdown命令
+### 6\. shutdown 命令
 
 shutdown \-s 关机
 
@@ -571,21 +571,21 @@ shutdown \-s 关机
 
 ### 1\) 分割字符串，以查看时间为例
 
-\%源字符串:\~起始值,截取长度\% \(起始值从0开始；截取长度是可选的，如果省略逗号和截取长度，将会从起始值截取到结尾；
+\%源字符串:\~起始值,截取长度\% \(起始值从 0 开始；截取长度是可选的，如果省略逗号和截取长度，将会从起始值截取到结尾；
 
 截取长度如果是负数，表示截取到倒数第几个。\)
 
 "\%time\%" 显示如："11:04:23.03" \(完整的时间"hh:mm:ss.tt"\)
 
-"\%time:\~0,5\%" 显示"hh:mm"\(即"11:04"\)，其中0表示从右向左移位操作的个数，5表示从左向右移位操作的个数
+"\%time:\~0,5\%" 显示"hh:mm"\(即"11:04"\)，其中 0 表示从右向左移位操作的个数，5 表示从左向右移位操作的个数
 
-"\%time:\~0,8\%" 显示标准时间格式"hh:mm:ss"\(即"11:04:23"，前8个字符串\)
+"\%time:\~0,8\%" 显示标准时间格式"hh:mm:ss"\(即"11:04:23"，前 8 个字符串\)
 
-"\%time:\~3,-3\%"显示"mm:ss"\(即从第4个开始,截去最后3个的字符串\)
+"\%time:\~3,-3\%"显示"mm:ss"\(即从第 4 个开始,截去最后 3 个的字符串\)
 
-"\%time:\~3\%" 显示"04:23.03"\(即去掉前4个字符串\)
+"\%time:\~3\%" 显示"04:23.03"\(即去掉前 4 个字符串\)
 
-"\%time:\~-3\%" 显示".tt"\(即最后3个字符串\)
+"\%time:\~-3\%" 显示".tt"\(即最后 3 个字符串\)
 
 上面的字串分割格式，也可以用于其它地方，如目录路径："\%cd:\~0,10\%"
 
@@ -607,31 +607,31 @@ set str1=\%str1\%\%str2\% \(合并 str1 和 str2\)
 
 ### 4\) 计算字符串长度
 
-没有现成的函数。如下程序利用 goto形成循环，不断将字符串截短1，并记录截短的次数，到字符串变成空时的次数即长度。
+没有现成的函数。如下程序利用 goto 形成循环，不断将字符串截短 1，并记录截短的次数，到字符串变成空时的次数即长度。
 
 set testStr=This is a test string
 
-:: 将 testStr 复制到str，str 是个临时字符串
+:: 将 testStr 复制到 str，str 是个临时字符串
 
 set str=\%testStr\%
 
-:: 标签，用于goto跳转
+:: 标签，用于 goto 跳转
 
 :next1
 
-:: 判断str是不是空，如果不是则执行下边的语句
+:: 判断 str 是不是空，如果不是则执行下边的语句
 
 if not "\%str\%"=="" \(
 
-:: 算术运算，使num的值自增1，相当于num++或者++num语句
+:: 算术运算，使 num 的值自增 1，相当于 num++或者++num 语句
 
 set /a num+=1
 
-:: 截取字符串，每次截短1
+:: 截取字符串，每次截短 1
 
 set "str=\%str:\~1\%"
 
-:: 跳转到next1标签: 这里利用goto和标签，构成循环结构
+:: 跳转到 next1 标签: 这里利用 goto 和标签，构成循环结构
 
 goto next1
 
@@ -641,7 +641,7 @@ goto next1
 
 echo testStr=\%testStr\%
 
-echo testStr的长度为：\%num\%
+echo testStr 的长度为：\%num\%
 
 ### 5\) 截取字符串时，需要传递参数
 
@@ -653,45 +653,45 @@ echo \!args:\~\%num\%,-5\!
 
 ## 六、注册表操作
 
-1\) 备份注册表，将\[HKEY\_LOCAL\_MACHINE ... Run\]的内容，备份到“c:\\windows\\1.reg”
+1\) 备份注册表，将\[HKEY_LOCAL_MACHINE ... Run\]的内容，备份到“c:\\windows\\1.reg”
 
-reg export HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run c:\\windows\\1.reg
+reg export HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run c:\\windows\\1.reg
 
-reg export HKEY\_CURRENT\_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run c:\\windows\\2.reg
+reg export HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run c:\\windows\\2.reg
 
 2\) 修改/添加注册表内容
 
 a.一般的添加或修改
 
-reg add "HKCU\\Environment" /v Java\_Home /t reg\_sz /d "D:\\Java\\jdk1.6.0\_07" /f
+reg add "HKCU\\Environment" /v Java_Home /t reg_sz /d "D:\\Java\\jdk1.6.0_07" /f
 
-上句解析：“HKCU”是“HKEY\_CURRENT\_USER”的缩写，不用缩写用全称也可以；
+上句解析：“HKCU”是“HKEY_CURRENT_USER”的缩写，不用缩写用全称也可以；
 
-添加名称为“Java\_Home”的变量；类型为“reg\_sz”，另一种常见类型是“reg\_dword”；值为 D:\\Java\\jdk1.6.0\_07；
+添加名称为“Java_Home”的变量；类型为“reg_sz”，另一种常见类型是“reg_dword”；值为 D:\\Java\\jdk1.6.0_07；
 
 b.使用变量
 
-set SoftWareHome=HKEY\_LOCAL\_MACHINE\\SOFTWARE\\JavaSoft\\Java
+set SoftWareHome=HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java
 
-reg add "\%SoftWareHome\%Web Start\\1.6.0\_07" /v Home /t reg\_sz /d "\%cd\%\\jre1.6.0\_07\\bin" /f
+reg add "\%SoftWareHome\%Web Start\\1.6.0_07" /v Home /t reg_sz /d "\%cd\%\\jre1.6.0_07\\bin" /f
 
 c.如果注册表的名称有空格，或者数据用特殊符号时
 
-reg add "\%SoftWareHome2\%\\HelpCommands" /v "01:Online Documentation" /t reg\_sz /d "\\"\%cd\%\\Documentation\\Index.htm\\"" /f
+reg add "\%SoftWareHome2\%\\HelpCommands" /v "01:Online Documentation" /t reg_sz /d "\\"\%cd\%\\Documentation\\Index.htm\\"" /f
 
-传入值为\(值用双引号括起来的\)："D:\\ProgramFiles\\1.work\_soft\\Sybase\\PowerDesigner\_12\\Documentation\\Index.htm"
+传入值为\(值用双引号括起来的\)："D:\\ProgramFiles\\1.work_soft\\Sybase\\PowerDesigner_12\\Documentation\\Index.htm"
 
-reg add "\%SoftWareHome2\%\\Paths" /v ReportTemplates /t reg\_sz /d "\%cd\%\\Resource Files\\Report Templates\\\\" /f
+reg add "\%SoftWareHome2\%\\Paths" /v ReportTemplates /t reg_sz /d "\%cd\%\\Resource Files\\Report Templates\\\\" /f
 
 传入值为\(“\\”结尾的\)： E:\\Holemar\\1.notes\\90. Windows\\Resource Files\\Report Templates\\
 
 d.增加空的内容
 
-reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Shared Tools\\MSConfig\\startupreg\\IMJPMIG8.1"
+reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Shared Tools\\MSConfig\\startupreg\\IMJPMIG8.1"
 
 e.添加或修改默认值
 
-reg add "\%vpath\%InstallPath" /ve /t reg\_sz /d "\%cd\%" /f
+reg add "\%vpath\%InstallPath" /ve /t reg_sz /d "\%cd\%" /f
 
 这里用“/ve”来代替一般修改时的“/v 变量名”,即可修改默认值了
 
@@ -699,33 +699,33 @@ reg add "\%vpath\%InstallPath" /ve /t reg\_sz /d "\%cd\%" /f
 
 双引号里面的是注册表的目录，下面两句将删除这目录下的所有信息
 
-reg delete "HKEY\_CURRENT\_USER\\Software\\RealVNC" /f
+reg delete "HKEY_CURRENT_USER\\Software\\RealVNC" /f
 
-reg delete "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\RealVNC" /f
+reg delete "HKEY_LOCAL_MACHINE\\SOFTWARE\\RealVNC" /f
 
 双引号里面的是注册表的目录，下面一句将删除这目录下指定的某个信息
 
-reg delete "HKEY\_LOCAL\_MACHINE\\Software\\RealVNC" /v VNC\_Server /f
+reg delete "HKEY_LOCAL_MACHINE\\Software\\RealVNC" /v VNC_Server /f
 
 4\) 注册表的常用位置
 
 a.系统启动项：
 
-\[HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\]
+\[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\]
 
-\[HKEY\_CURRENT\_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\]
+\[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\]
 
-example: REG ADD HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v VNC\_Server /t REG\_SZ /d "\%cd\%\\VNC\_Server.bat" /f
+example: REG ADD HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v VNC_Server /t REG_SZ /d "\%cd\%\\VNC_Server.bat" /f
 
 b.系统环境变量：
 
-\[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment\]
+\[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment\]
 
 c.当前用户的环境变量：
 
-\[HKEY\_CURRENT\_USER\\Environment\]
+\[HKEY_CURRENT_USER\\Environment\]
 
-5\) 修改注册表之后，结束并重新加载explorer.exe进程，可刷新注册表，令其生效
+5\) 修改注册表之后，结束并重新加载 explorer.exe 进程，可刷新注册表，令其生效
 
 taskkill /f /im explorer.exe >nul
 
@@ -745,17 +745,17 @@ start "" "explorer.exe"
 
 已禁用：SC CONFIG 服务名 START= disabled
 
-附：“START= ”等号后面必须要有一个空格。\(start还有boot,system两个值\)
+附：“START= ”等号后面必须要有一个空格。\(start 还有 boot,system 两个值\)
 
 Sample: SC CONFIG Spooler START= demand \(打印机加载项，设置成手动，默认自动\)
 
 3\) 查看系统服务：start \%SystemRoot\%\\system32\\services.msc /s
 
-## 八、setlocal与变量延迟
+## 八、setlocal 与变量延迟
 
 0\) 在没有开启变量延迟的情况下，某条命令行中的变量改变，必须到下一条命令才能体现。
 
-另外例如for命令等，其后用一对圆括号闭合的所有语句也当作一行。
+另外例如 for 命令等，其后用一对圆括号闭合的所有语句也当作一行。
 
 example:
 
@@ -805,7 +805,7 @@ set a=5 \& echo \!a\!
 
 变量延迟的启动语句是“setlocal enabledelayedexpansion”，并且变量要用一对叹号“\!\!”括起来
 
-由于启动了变量延迟，所以批处理能够感知到动态变化，即不是先给该行变量赋值，而是在运行过程中给变量赋值，因此此时a的值就是5了
+由于启动了变量延迟，所以批处理能够感知到动态变化，即不是先给该行变量赋值，而是在运行过程中给变量赋值，因此此时 a 的值就是 5 了
 
 另外，启动变量延迟，“\%”的变量还是不变
 
@@ -821,7 +821,7 @@ echo \!a\!
 
 \)
 
-结果，打印从1到5；如果不变量延迟，一个变量也没有打印
+结果，打印从 1 到 5；如果不变量延迟，一个变量也没有打印
 
 ## 九、文件处理
 
@@ -831,7 +831,7 @@ echo \!a\!
 
 del /s /q /f d:\\test\\a.bat
 
-将直接删除d:\\test\\a.bat，没有任务提示
+将直接删除 d:\\test\\a.bat，没有任务提示
 
 del temp\\\* /q /f /s
 
@@ -843,7 +843,7 @@ del temp\\\* /q /f /s
 
 rd /q /s d:\\test\\log
 
-将直接删除d:\\test\\log目录，如果log目录里面有文件将无法删除
+将直接删除 d:\\test\\log 目录，如果 log 目录里面有文件将无法删除
 
 ### 3\) 删除一个非空目录 \(必须指定目录名称\)
 
@@ -881,9 +881,9 @@ MD \[drive:\]path
 
 "LeapFTP.exe" 可正常运行文件，start "" "LeapFTP.exe" 也可以正常运行文件\(注意，第一个参数是窗口显示的标题\)
 
-3\. copy C:\\test\\\*.\* D:\\back \(复制C盘test文件夹的所有文件\(不包括文件夹及子文件夹里的东西\)到D盘的back文件夹\)
+3\. copy C:\\test\\\*.\* D:\\back \(复制 C 盘 test 文件夹的所有文件\(不包括文件夹及子文件夹里的东西\)到 D 盘的 back 文件夹\)
 
-4\. dir c:\\\*.\* > a.txt \(将c盘文件列表写入 a.txt 中\)
+4\. dir c:\\\*.\* > a.txt \(将 c 盘文件列表写入 a.txt 中\)
 
 5\. > 生成文件并写入内容\(如果有这文件则覆盖\)， >> 文件里追加内容
 
@@ -895,19 +895,19 @@ MD \[drive:\]path
 
 9\. 让用户按回车退出
 
-小技巧\(替代pause\)，文件的最后一句：set /p tmp=操作结束，请按回车键退出...
+小技巧\(替代 pause\)，文件的最后一句：set /p tmp=操作结束，请按回车键退出...
 
-10.设置标题： title JDK安装
+10.设置标题： title JDK 安装
 
 11.设置屏幕显示颜色，如绿色: color 0a
 
 12.清屏： cls
 
-13.查看自己的IP：
+13.查看自己的 IP：
 
 for /f "tokens=15" \%\%i in \('ipconfig \^| find /i "ip address"'\) do set ip=\%\%i
 
-echo \%ip\% \(这时的 \%ip\% 就是自己的IP地址\)
+echo \%ip\% \(这时的 \%ip\% 就是自己的 IP 地址\)
 
 14\. 修改文件的更新日期
 
@@ -925,15 +925,15 @@ rename test.jpg test2.JPG
 
 rename \*.jpg \*.888.JPG
 
-17\. 查看DNS、IP、Mac等
+17\. 查看 DNS、IP、Mac 等
 
 1\) Win98： winipcfg
 
-2\) Win2000以上： Ipconfig /all
+2\) Win2000 以上： Ipconfig /all
 
 3\) NSLOOKUP
 
-18.查看IP上的共享资源，就可以
+18.查看 IP 上的共享资源，就可以
 
 net view 192.168.10.8
 
@@ -945,13 +945,13 @@ B.手工删除共享
 
 net share 共享资源名称\$ /d
 
-注意\$后有空格。
+注意\$ 后有空格。
 
 C.增加一个共享：
 
 net share mymovie=e:\\downloads\\movie /users:3
 
-mymovie 共享成功。 同时限制链接用户数为3人。
+mymovie 共享成功。 同时限制链接用户数为 3 人。
 
 20.打开某网站
 
@@ -961,11 +961,11 @@ start iexplore.exe [http://www.baidu.com](http://www.baidu.com/)
 
 1\. 生成 reg 文件，运行它，再删除它
 
-echo "更改windows安装文件的路径"
+echo "更改 windows 安装文件的路径"
 
 echo Windows Registry Editor Version 5.00 > c:\\setupreg.reg
 
-echo \[HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\] >> c:\\setupreg.reg
+echo \[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\] >> c:\\setupreg.reg
 
 echo "ServicePackSourcePath"="D:\\\\Win2003\\\\" >> c:\\setupreg.reg
 
@@ -979,9 +979,9 @@ regedit /S c:\\setupreg.reg
 
 del c:\\setupreg.reg
 
-2.调用了exe文件,结束后没有关闭，解决方法
+2.调用了 exe 文件,结束后没有关闭，解决方法
 
-用start命令运行文件，如：
+用 start 命令运行文件，如：
 
 start LeapFTP.exe 192.168.0.100
 
@@ -989,23 +989,23 @@ start LeapFTP.exe 192.168.0.100
 
 :: 有这个环境变量，则不需再设置，直接结束
 
-if not "\%JAVA\_HOME\%" == "" exit
+if not "\%JAVA_HOME\%" == "" exit
 
 :: 设置环境变量的地址
 
-set inputJavaHome=\%cd\%\\jdk1.6.0\_07
+set inputJavaHome=\%cd\%\\jdk1.6.0_07
 
 :: 设置环境变量，也可以设置当前用户的变量
 
-set EnvironmentHome=HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment
+set EnvironmentHome=HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment
 
 echo 正在设置环境变量，请稍候......
 
-reg add "\%EnvironmentHome\%" /v JAVA\_HOME /t reg\_sz /d "\%inputJavaHome\%" /f
+reg add "\%EnvironmentHome\%" /v JAVA_HOME /t reg_sz /d "\%inputJavaHome\%" /f
 
-reg add "\%EnvironmentHome\%" /v ClassPath /t reg\_sz /d ".;\%\%JAVA\_HOME\%\%\\lib" /f
+reg add "\%EnvironmentHome\%" /v ClassPath /t reg_sz /d ".;\%\%JAVA_HOME\%\%\\lib" /f
 
-reg add "\%EnvironmentHome\%" /v Path /t reg\_sz /d "\%\%JAVA\_HOME\%\%\\bin;\%Path\%" /f\]
+reg add "\%EnvironmentHome\%" /v Path /t reg_sz /d "\%\%JAVA_HOME\%\%\\bin;\%Path\%" /f\]
 
 :: 刷新，令环境变量生效
 
@@ -1019,7 +1019,7 @@ cd /d 要隐藏的目录\(如：D:\)
 
 for /f "usebackq delims=" \%\%A in \(\`dir /a /b\`\) do \(attrib "\%\%A" \-r +h \-s\)
 
-5.在批处理中使用密码。密码为admin，输入正确，跳转到next1 ，若输入密码错误3次，则锁屏。。
+5.在批处理中使用密码。密码为 admin，输入正确，跳转到 next1 ，若输入密码错误 3 次，则锁屏。。
 
 \@echo off
 
@@ -1067,7 +1067,7 @@ start "" "explorer.exe"
 
 :begin
 
-:: 发出鸣叫\(“”实际就是ASCII码值为7的特殊字符（蜂鸣键beep）
+:: 发出鸣叫\(“”实际就是 ASCII 码值为 7 的特殊字符（蜂鸣键 beep）
 
 echo
 
@@ -1091,7 +1091,7 @@ volume 指定驱动器号\(后面跟一个冒号\)、装载点或卷名。
 
 /CvtArea:filename
 
-将根目录中的一个接续文件指定为NTFS 系统文件的占位符。
+将根目录中的一个接续文件指定为 NTFS 系统文件的占位符。
 
 /NoSecurity 指定每个人都可以访问转换的文件和目录的安全设置。
 
@@ -1107,11 +1107,11 @@ volume 指定驱动器号\(后面跟一个冒号\)、装载点或卷名。
 
 \@ ECHO \--------------------------------------------------------------------------
 
-\@ ECHO NTFS是一种磁盘格式。该格式能存放大于4G的单个文件\(如高清电影文件\)，并可对
+\@ ECHO NTFS 是一种磁盘格式。该格式能存放大于 4G 的单个文件\(如高清电影文件\)，并可对
 
-\@ ECHO 文件夹进行加密，但有个缺点是DOS下无法访问。建议D盘及其后的盘使用NTFS格式，
+\@ ECHO 文件夹进行加密，但有个缺点是 DOS 下无法访问。建议 D 盘及其后的盘使用 NTFS 格式，
 
-\@ ECHO C盘如非必要可以不转换，FAT32与NTFS这两种格式的读写速度几乎是没有差别的。
+\@ ECHO C 盘如非必要可以不转换，FAT32 与 NTFS 这两种格式的读写速度几乎是没有差别的。
 
 \@ ECHO \--------------------------------------------------------------------------
 
@@ -1119,7 +1119,7 @@ volume 指定驱动器号\(后面跟一个冒号\)、装载点或卷名。
 
 convert c: /fs:ntfs
 
-:: D盘也转成 NTFS
+:: D 盘也转成 NTFS
 
 convert d: /fs:ntfs
 
@@ -1137,7 +1137,7 @@ XCOPY /D /E /R /Y /C "\%cd\%\\test.txt" "\%myDoc\%\\test\\"
 
 cd ./
 
-set CURR\_PATH=\%cd\%
+set CURR_PATH=\%cd\%
 
 \==========================================
 
@@ -1153,7 +1153,7 @@ IF ERRORLEVEL 0 ECHO 成功拷贝文件
 
 如果文件拷贝成功，屏幕就会显示“成功拷贝文件”，否则就会显示“文件拷贝失败”。
 
-IF ERRORLEVEL 是用来测试它的上一个DOS命令的返回值的，注意只是上一个命令的返回值，而且返回值必须依照从大到小次序顺序判断。因此下面的批处理文件是错误的：
+IF ERRORLEVEL 是用来测试它的上一个 DOS 命令的返回值的，注意只是上一个命令的返回值，而且返回值必须依照从大到小次序顺序判断。因此下面的批处理文件是错误的：
 
 \@ECHO OFF
 
@@ -1163,7 +1163,7 @@ CHO 成功拷贝文件
 
 IF ERRORLEVEL 1 ECHO 未找到拷贝文件
 
-IF ERRORLEVEL 2 ECHO 用户通过ctrl-c中止拷贝操作
+IF ERRORLEVEL 2 ECHO 用户通过 ctrl-c 中止拷贝操作
 
 IF ERRORLEVEL 3 ECHO 预置错误阻止文件拷贝操作
 
@@ -1173,7 +1173,7 @@ IF ERRORLEVEL 4 ECHO 拷贝过程中写盘错误
 
 未找到拷贝文件
 
-用户通过ctrl-c中止拷贝操作
+用户通过 ctrl-c 中止拷贝操作
 
 预置错误阻止文件拷贝操作
 
@@ -1191,7 +1191,7 @@ backup
 
 2 文件共享冲突阻止备份完成
 
-3 用户用ctrl-c中止备份
+3 用户用 ctrl-c 中止备份
 
 4 由于致命的错误使备份操作中止
 
@@ -1201,7 +1201,7 @@ diskcomp
 
 1 盘比较不同
 
-2 用户通过ctrl-c中止比较操作
+2 用户通过 ctrl-c 中止比较操作
 
 3 由于致命的错误使比较操作中止
 
@@ -1213,7 +1213,7 @@ diskcopy
 
 1 非致命盘读/写错
 
-2 用户通过ctrl-c结束拷贝操作
+2 用户通过 ctrl-c 结束拷贝操作
 
 3 因致命的处理错误使盘拷贝中止
 
@@ -1223,11 +1223,11 @@ format
 
 0 格式化成功
 
-3 用户通过ctrl-c中止格式化处理
+3 用户通过 ctrl-c 中止格式化处理
 
 4 因致命的处理错误使格式化中止
 
-5 在提示“proceed with format\(y/n\)\?”下用户键入n结束
+5 在提示“proceed with format\(y/n\)\?”下用户键入 n 结束
 
 xcopy
 
@@ -1235,7 +1235,7 @@ xcopy
 
 1 未找到拷贝文件
 
-2 用户通过ctrl-c中止拷贝操作
+2 用户通过 ctrl-c 中止拷贝操作
 
 4 预置错误阻止文件拷贝操作
 
@@ -1243,7 +1243,7 @@ xcopy
 
 \=============================================================
 
-\@echo off //不显示shell的命令。
+\@echo off //不显示 shell 的命令。
 
 Setlocal //环境改变只适用于这个文件。
 
@@ -1261,9 +1261,9 @@ Not //取反
 
 Netstat –na //显示当前被点用的端口.
 
-\%0 \%1 \%2 //用于表示批处理文件的参数0为命令,共1-9个参数。
+\%0 \%1 \%2 //用于表示批处理文件的参数 0 为命令,共 1-9 个参数。
 
-Shift //用于向前一个参数，原1变0，原2变1.每调用一次shift向前一移动一位。
+Shift //用于向前一个参数，原 1 变 0，原 2 变 1.每调用一次 shift 向前一移动一位。
 
 Call //调用其他批处理文件或命令。
 
@@ -1271,7 +1271,7 @@ Start 命令 参数 //指示出在另一个窗口中开始运行命令。
 
 \=============================================================
 
-:: 这段批处理程序可以自动设置Java环境变量
+:: 这段批处理程序可以自动设置 Java 环境变量
 
 \@echo off
 
@@ -1279,17 +1279,17 @@ IF EXIST \%1\\bin\\java.exe \(
 
 rem 如输入正确的 Java2SDK 安装目录，开始设置环境变量
 
-\@setx JAVA\_HOME \%1
+\@setx JAVA_HOME \%1
 
-\@setx path \%path\%;\%JAVA\_HOME\%\\bin
+\@setx path \%path\%;\%JAVA_HOME\%\\bin
 
 \@setx classpath \%classpath\%;.
 
-\@setx classpath \%classpath\%;\%JAVA\_HOME\%\\lib\\tools.jar
+\@setx classpath \%classpath\%;\%JAVA_HOME\%\\lib\\tools.jar
 
-\@setx classpath \%classpath\%;\%JAVA\_HOME\%\\lib\\dt.jar
+\@setx classpath \%classpath\%;\%JAVA_HOME\%\\lib\\dt.jar
 
-\@setx classpath \%classpath\%;\%JAVA\_HOME\%\\jre\\lib\\rt.jar
+\@setx classpath \%classpath\%;\%JAVA_HOME\%\\jre\\lib\\rt.jar
 
 \@echo on
 
@@ -1307,7 +1307,7 @@ rem 如没有提供安装目录，提示之后退出
 
 \) ELSE \(
 
-rem 如果提供非空的安装目录但没有bin\\java.exe，则指定的目录为错误的目录
+rem 如果提供非空的安装目录但没有 bin\\java.exe，则指定的目录为错误的目录
 
 \@echo on
 
@@ -1321,4 +1321,4 @@ rem 如果提供非空的安装目录但没有bin\\java.exe，则指定的目录
 
 ### 中文乱码
 
-把bat文件的编码改为ANSI，UTF-8在win10我这儿会中文显示乱码
+把 bat 文件的编码改为 ANSI，UTF-8 在 win10 我这儿会中文显示乱码
